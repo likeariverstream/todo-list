@@ -43,18 +43,9 @@ export default {
       <li class="list-item" v-for="task in tasks" :key="task.id">
         <div class="container" v-if="!task.editing">
           <div class="wrapper">
-            <input
-              type="checkbox"
-              class="checkbox"
-              v-bind:checked="task.completed"
-              id="task-completed"
-              @change="toggleTaskCompleted(task)"
-            />
-            <span
-              class="task-title"
-              v-bind:class="{ completed: task.completed }"
-              >{{ task.title }}</span
-            >
+            <input type="checkbox" class="checkbox" v-bind:checked="task.completed" id="task-completed"
+              @change="toggleTaskCompleted(task)" />
+            <span class="task-title" v-bind:class="{ completed: task.completed }">{{ task.title }}</span>
           </div>
           <div class="wrapper">
             <button class="button" @click="editTask(task)">Edit</button>
@@ -77,12 +68,6 @@ export default {
 @media (max-width: 1024px) {
   .todo {
     margin-top: 2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .list {
-    height: 30vh;
   }
 }
 
@@ -209,5 +194,11 @@ li div button:last-child {
 
 li div button:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .list {
+    height: 30vh;
+  }
 }
 </style>
