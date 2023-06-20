@@ -4,7 +4,6 @@ import router from "./router";
 import "./assets/main.css";
 import { store } from "./stores/todo";
 
-
 new Vue({
   router,
   store,
